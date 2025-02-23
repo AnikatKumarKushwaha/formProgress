@@ -6,6 +6,7 @@ import HeadingSmall from "../../ui/HeadingSmall";
 import FormCheckBox from "../../ui/FormCheckBox";
 import { IoIosAddCircle } from "react-icons/io";
 import FormButton from "../../ui/FormButton";
+import { useNavigate } from "react-router-dom";
 
 const WorkExperience = ({ onNext }) => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ const WorkExperience = ({ onNext }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -97,7 +99,9 @@ const WorkExperience = ({ onNext }) => {
 
       <div className="flex justify-between w-full mt-5">
         <div className=" sm:-translate-x-14">
-          <FormButton color="gray">Skip</FormButton>
+          <FormButton color="gray" onClick={() => navigate("/main")}>
+            Skip
+          </FormButton>
         </div>
         <div className=" sm:translate-x-14">
           <FormButton onClick={handleNext} color="green">
