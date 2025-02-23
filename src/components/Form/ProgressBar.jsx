@@ -11,11 +11,11 @@ const ProgressBar = ({ currentStep }) => {
   ];
 
   return (
-    <div className="flex gap-4 my-8">
+    <div className="flex gap-2 sm:gap-4 my-8">
       {colors.map((color, index) => (
         <div
           key={index}
-          className={`h-2 w-20 rounded-full transition-all duration-300 ${
+          className={`h-2 w-10 sm:w-20 rounded-full transition-all duration-300 ${
             index <= currentStep ? colors[index] : "bg-gray-100"
           }`}
         ></div>
